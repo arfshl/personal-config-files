@@ -1,64 +1,37 @@
-[CmdletBinding()]
-  
-param (
-  
-    [Parameter(Position=0)]
-  
-    [string]$Mode = "-v",
-  
-    
-  
-    [Parameter(Position=1, Mandatory=$false)]
-  
-    [string]$Url
-  
-)
-  
+#!/bin/bash
 
-  
 # Format flags
-  
-$VIDEO = "-S vcodec:h264,fps,res:360,acodec:aac,ext:mp4 -P D:/Downloads"
-  
-$AUDIO = "-x --audio-format mp3 -P D:/Downloads"
-  
+VIDEO="-S vcodec:h264,fps,res:360,acodec:aac,ext:mp4 -P /home/$USER/Download"
+AUDIO="-x --audio-format mp3 -P /home/$USER/Download"
 
-  
-# Mode selection
-  
-if ($Mode -notin @("-v", "-a")) {
-  
-    $Url = $Mode
-  
-    $Mode = "-v"
-  
-}
-  
-$FORMAT = if ($Mode -eq "-v") { $VIDEO } else { $AUDIO }
-  
-
-  
-# Download
-  
-if (-not $Url) {
-  
-    Write-Host "Usage: .\ytdlps.ps1 [-v|-a] <URL>"
-  
-    Write-Host "Examples:"
-  
-    Write-Host "  ytdla.ps1 -v 
-  
-    Write-Host "  ytdla.ps1 -a 
-  
-    Write-Host "  ytdla.ps1 
-  
+# Check arguments
+if [[ $# -eq 0 ]]; then
+    echo "Usage: ytdla [-v {video} |-a {audio}] <URL>"
+    echo "Examples:"
+    echo "  ytdla -v <URL>"
+    echo "  ytdla -a <URL>"
     exit 1
-  
-}
-  
+fi
 
-  
-$args = ($FORMAT + " " + $Url).Split(" ")
-  
-Start-Process -NoNewWindow -Wait -FilePath "yt-dlp" -ArgumentList $args
+# Parse mode
+if [[ "$1" == "-v" || "$1" == "-a" ]]; then
+    MODE="$1"
+    shift
+fi
 
+# URL check
+if [[ -z "$1" ]]; then
+    echo "Error: No URL provided."
+    exit 1
+fi
+
+URL="$1"
+FORMAT="$VIDEO"
+if [[ "$MODE" == "-v" ]]; then
+    FORMAT="$VIDEO"
+elif [[ "$MODE" == "-a" ]]; then
+    FORMAT="$AUDIO"
+fi
+
+# Download
+yt-dlp $FORMAT "$URL"
