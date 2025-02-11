@@ -8,8 +8,8 @@ AUDIO="-x --audio-format mp3 -P /home/$USER/Download"
 if [[ $# -eq 0 ]]; then
     echo "Usage: ytdla [-v {video} |-a {audio}] <URL>"
     echo "Examples:"
-    echo "  ytdla -v <URL>"
-    echo "  ytdla -a <URL>"
+    echo "  ./ytdla -v <URL>"
+    echo "  ./ytdla -a <URL>"
     exit 1
 fi
 
