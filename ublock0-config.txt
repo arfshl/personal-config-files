@@ -3,11 +3,11 @@
   "version": "1.59.0",
   "userSettings": {
     "advancedUserEnabled": true,
-    "externalLists": "https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=bpc-paywall-filter.txt\nhttps://github.com/arfshl/personal-blocklist/raw/main/adblock.txt\nhttps://malware-filter.gitlab.io/botnet-filter/botnet-filter.txt\nhttps://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt\nhttps://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
+    "externalLists": "https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=bpc-paywall-filter.txt\nhttps://raw.githubusercontent.com/arfshl/personal-blocklist/main/internal-usage/b.txt\nhttps://malware-filter.gitlab.io/botnet-filter/botnet-filter.txt\nhttps://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt\nhttps://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt",
     "firewallPaneMinimized": false,
     "importedLists": [
       "https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=bpc-paywall-filter.txt",
-      "https://github.com/arfshl/personal-blocklist/raw/main/adblock.txt",
+      "https://raw.githubusercontent.com/arfshl/personal-blocklist/main/internal-usage/b.txt",
       "https://malware-filter.gitlab.io/botnet-filter/botnet-filter.txt",
       "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt",
       "https://raw.githubusercontent.com/realodix/AdBlockID/main/dist/adblockid.adfl.txt"
