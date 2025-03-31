@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Format flags
+# Download Video in 360p Resolution and mp4 format (change res: to any resolution)
 VIDEO="-S vcodec:h264,fps,res:360,acodec:aac,ext:mp4 -P /home/$USER/Download"
+# Download Audio in mp3 format
 AUDIO="-x --audio-format mp3 -P /home/$USER/Download"
 
 # Check arguments
